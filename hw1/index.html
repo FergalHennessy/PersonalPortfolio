@@ -11,7 +11,7 @@
   <script src="https://kit.fontawesome.com/fa62c117c7.js" crossorigin="anonymous"></script>
   <!-- BEGIN PART 1 -->
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <title>Fergal's Portfolio</title>
+  <title class="crazy">Fergal's Portfolio</title>
   <!-- END PART 1 -->
 </head>
 
@@ -20,12 +20,9 @@
     <!-- BEGIN PART 2 -->
     <h3>
       <a class="link" href ="index.html" style="display: inline-block">FH</a>
-        <button type="button" aria-label="toggle theme" class="btn btn--icon" style="float:right">
-          <i id="btn-theme" class="fas fa-moon"></i>
-        </button>
     </h3>
     <!-- END PART 2 -->
-    <nav class="nav center">
+    <nav class="nav center">  
       <ul class="nav__list center">
         <li class="nav__list-item">
           <a class="link link--nav" href="#projects">Projects</a>
@@ -37,16 +34,16 @@
           <a class="link link--nav" href="#contact">Contact</a>
         </li>
       </ul>
+      </nav>
+      <!-- BEGIN PART 5 -->
 
-      <!-- BEGIN PART 5 
-
-      <button type="button" aria-label="toggle theme" class="btn btn--icon">
+      <button type="button" aria-label="toggle theme" class="btn btn--icon center">
         <i id="btn-theme" class="fas fa-moon"></i>
       </button>
-      -->
+      
       <!-- 
         5.1: What does this button tag correspond to on the site? 
-        Night Mode Button!
+        Night Mode Button
       
       -->
 
@@ -64,15 +61,15 @@
        -->
 
       <!-- END PART 5 -->
-    </nav>
+    
   </header>
 
   <main>
     <div class="about center">
       <!-- BEGIN PART 6 -->
-      <h1>Hi, I'm <span class="about__name">Fergal Hennessy</span> </h1>
-      <h2 class="about__role">Aspiring Software Engineer</h2>
-      <p class="about__desc">This is the biography of Fergal Hennessy</p>
+      <h1 class="about__name center"> Hi, I'm Fergal Hennessy </h1>
+      <h2 class="about__role center">Aspiring Software Engineer</h2>
+      <p class="about__desc center">This is the biography of Fergal Hennessy</p>
 
       <!-- END PART 6 -->
       <div class="about__contact center">
@@ -197,6 +194,11 @@
         <span class="btn btn--outline">Email me</span>
       </a>
     </section>
+    <button class="confettiButton">Click Here</button>
+    <div class="popup">
+      <h2>h2 content here:</h2>
+      <b class= "close">x</b>
+    </div>
   </main>
 
   <footer class="footer">
@@ -215,6 +217,27 @@
       </a>
     </div>
   </div>
+
+  <canvas id="my-canvas"></canvas>
+
+  <script src="index.min.js"></script>
+  <script> 
+    let confet = document.querySelector('.confettiButton');
+    let popup = document.querySelector('.popup');
+    let close = document.querySelector('.close');
+    let canvassed = document.querySelector('#my-canvas');
+    confet.onclick = function(){
+      /*canvassed.classList.add('active');*/
+      popup.classList.add('active')
+      
+    }
+    close.onclick = function(){
+      popup.classList.remove ('active')
+      }
+    
+    var confettiSettings = {target: 'my-canvas'};
+    var confetti = new ConfettiGenerator(confettiSettings);
+    confetti.render();</script>
   <script src="./script.js"></script>
 </body>
 

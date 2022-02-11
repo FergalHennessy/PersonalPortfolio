@@ -1,5 +1,4 @@
 const body = document.body
-
 const btnTheme = document.querySelector('.fa-moon')
 const btnHamburger = document.querySelector('.fa-bars')
 
@@ -15,7 +14,14 @@ addThemeClass(getBodyTheme, getBtnTheme)
 
 const isDark = () => body.classList.contains('dark')
 
+let isCrazy = 0
+
 const setTheme = (bodyClass, btnClass) => {
+
+
+
+	isCrazy = (isCrazy + 1) % 4
+	
 
 	body.classList.remove(localStorage.getItem('portfolio-theme'))
 	btnTheme.classList.remove(localStorage.getItem('portfolio-btn-theme'))
@@ -45,6 +51,7 @@ const displayList = () => {
 	}
 }
 
+
 btnHamburger.addEventListener('click', displayList)
 
 const scrollUp = () => {
@@ -59,5 +66,7 @@ const scrollUp = () => {
 		btnScrollTop.style.display = 'none'
 	}
 }
+
+
 
 document.addEventListener('scroll', scrollUp)
