@@ -1,0 +1,20 @@
+Javascript promises:
+
+let somePromise = new Promise(function(resolve, reject){
+
+    let isClean = true;
+
+    if(isClean){
+        resolve( 'Clean');
+    } else {
+        reject('not Clean');
+    }
+
+});
+
+
+somePromise.then( function(fromResolve){
+    console.log('the room is' + fromResolve);
+}).catch(function(fromReject){
+
+})
